@@ -18,10 +18,10 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.security:spring-security-core")
 
-    compile "org.togglz:togglz-spring-boot-starter:2.5.0.Final"
-    compile "org.togglz:togglz-console:2.5.0.Final"
-    compile "org.togglz:togglz-spring-security:2.5.0.Final"
+    compile "org.togglz:togglz-spring-boot-starter:2.6.1.Final"
+    compile "org.togglz:togglz-console:2.6.1.Final"
+    compile "org.togglz:togglz-spring-security:2.6.1.Final"
 
-    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+    compile group: 'redis.clients', name: 'jedis', version: '3.0.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
