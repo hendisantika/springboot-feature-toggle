@@ -15,5 +15,13 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.security:spring-security-core")
+
+    compile "org.togglz:togglz-spring-boot-starter:2.5.0.Final"
+    compile "org.togglz:togglz-console:2.5.0.Final"
+    compile "org.togglz:togglz-spring-security:2.5.0.Final"
+
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
