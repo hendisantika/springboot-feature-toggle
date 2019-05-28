@@ -1,7 +1,12 @@
 package com.hendisantika.springbootfeaturetoggle.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.togglz.core.manager.EnumBasedFeatureProvider;
+import org.togglz.core.repository.StateRepository;
+import org.togglz.core.spi.FeatureProvider;
+import org.togglz.core.user.UserProvider;
 import redis.clients.jedis.JedisPool;
 
 /**
@@ -26,5 +31,22 @@ public class AppTogglzConfig {
         this.togglzPrefix = togglzPrefix;
     }
 
+    @Bean
+    public UserProvider userProvider() {
+        return this::getCurrentUserProvider;
+    }
+
+    @Bean
+    public StateRepository getStateRepository() {
+        return new RedisStateRepository.Builder()
+                .keyPrefix(togglzPrefix + ":")
+                .jedisPool(jedisPool)
+                .build();
+    }
+
+    @Bean
+    public FeatureProvider featureProvider() {
+        return new EnumBasedFeatureProvider(AvailableFeatures.class);
+    }
 
 }
