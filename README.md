@@ -12,3 +12,18 @@ Feature toggles have some requirements that we need to take into account when th
 * **persistence**: what happens when my service restarts? do all the flags reset to their initial state? do they maintain any changes I’ve made?
 * *(advanced)* **trigger**: are they enabled/disabled for everyone all the time? or just a subset of users? how do you pick which users / connections / requests / API calls get the feature and which don’t?
 * **suitability**: is the solution suited to the problem at hand? (are you over-engineering this? )
+
+## Single instance
+
+Using a single service instance is a good entry level problem for trying out workflows based on feature flags.
+
+**Attempt 1**. Feature flags can be as simple as having a constant global *Map<String, Boolean>* which you can update/check from anywhere in your code. Let’s review our checklist:
+
+* **difficulty**: low
+* **default** state: default state is hard-coded
+* **run-time** configuration: not without some boilerplate
+* **persistence**: no persistence
+* **trigger**: no ability to categorize requests differentiate between them
+* **suitability**: this solution is suitable for very small, short-lived projects
+    
+    
