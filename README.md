@@ -26,4 +26,13 @@ Using a single service instance is a good entry level problem for trying out wor
 * **trigger**: no ability to categorize requests differentiate between them
 * **suitability**: this solution is suitable for very small, short-lived projects
     
+**Attempt 2**. To try and overcome some of the short-comings of the previous attempt we could have a repository that stores the state of the flags when they’re changed. Also have a few strategies that tell us if a flag should or should not be considered for a certain user. Getting back to our list:
+
+* **difficulty**: high. there’s a lot of repository/service methods to implement. not hard in itself, but the code needs to be written, tested and maintained.
+* **default** state: default state is hard-coded
+* **run-time configuration**: not without some boilerplate
+* **persistence**: if implemented adds to the overall complexity
+* **trigger**: if implemented adds to the overall complexity
+* **suitability**: I don’t think this solution is worth pursuing when considering alternatives
+ 
     
