@@ -35,4 +35,13 @@ Using a single service instance is a good entry level problem for trying out wor
 * **trigger**: if implemented adds to the overall complexity
 * **suitability**: I don’t think this solution is worth pursuing when considering alternatives
  
+**Attempt 3**. What if I want to both have my cake (have persistence and triggers) and eat it (have a low implementation cost)? One solution is to use the [Togglz library](https://www.togglz.org/) . It’s simple to use and [easy to get started with](https://www.togglz.org/documentation/overview.html) . Quick glance at the checklist:
+
+* **difficulty**: low
+* **default** state: default state is hard-coded (cold start) or loaded from store (subsequent starts)
+* **run-time configuration**: has a nice console that allows you to change all variables
+* **persistence**: can be added if needed with minimal code. multiple storage back-ends are available
+* **trigger**: has support
+* **suitability**: suitable for projects of all sizes
+
     
