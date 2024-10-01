@@ -19,7 +19,7 @@ dependencies {
     compile("org.springframework.security:spring-security-core")
 
     compile "org.togglz:togglz-spring-boot-starter:2.6.1.Final"
-    compile "org.togglz:togglz-console:2.6.1.Final"
+    compile "org.togglz:togglz-console:4.4.0"
     compile "org.togglz:togglz-spring-security:2.6.1.Final"
 
     compile group: 'redis.clients', name: 'jedis', version: '3.0.1'
