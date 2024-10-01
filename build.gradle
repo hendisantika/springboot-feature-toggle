@@ -20,7 +20,7 @@ dependencies {
 
     compile "org.togglz:togglz-spring-boot-starter:2.6.1.Final"
     compile "org.togglz:togglz-console:4.4.0"
-    compile "org.togglz:togglz-spring-security:2.6.1.Final"
+    compile "org.togglz:togglz-spring-security:4.4.0"
 
     compile group: 'redis.clients', name: 'jedis', version: '3.0.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
